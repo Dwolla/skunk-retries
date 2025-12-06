@@ -7,8 +7,8 @@ ThisBuild / developers := List(
   tlGitHubDev("bpholt", "Brian Holt")
 )
 
-ThisBuild / crossScalaVersions := Seq("2.13.17", "2.12.20", "3.3.7")
-ThisBuild / scalaVersion := "2.13.17" // the default Scala
+ThisBuild / crossScalaVersions := Seq("2.13.18", "2.12.20", "3.3.7")
+ThisBuild / scalaVersion := "2.13.18" // the default Scala
 ThisBuild / githubWorkflowScalaVersions := Seq("2.13", "2.12", "3")
 ThisBuild / tlJdkRelease := Some(8)
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("17"))
