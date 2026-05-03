@@ -30,7 +30,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
     name := "skunk-retries",
     libraryDependencies ++= Seq(
       "org.tpolecat" %%% "skunk-core" % "0.6.5",
-      "org.tpolecat" %%% "natchez-core" % "0.3.9",
+      "org.tpolecat" %%% "natchez-core" % "0.3.10",
       "org.typelevel" %%% "cats-tagless-core" % "0.16.5",
       "com.dwolla" %%% "natchez-tagless" % "0.2.6",
       "io.circe" %%% "circe-literal" % "0.14.15",
