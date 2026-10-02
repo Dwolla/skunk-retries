@@ -3,11 +3,11 @@ package com.dwolla.skunkretries
 import cats.*
 import cats.effect.*
 import cats.effect.std.*
-import com.dwolla.tracing.LowPriorityTraceableValueInstances.*
+import com.dwolla.tracing.LowPriorityTraceableValueInstances
 import io.circe.*
 import io.circe.literal.*
 import io.circe.syntax.*
-import natchez.Trace
+import natchez.{Trace, TraceableValue}
 import retry.*
 import retry.RetryPolicies.*
 import retry.syntax.*
@@ -34,6 +34,9 @@ class RetryOnEofException[F[_] : Random : Temporal : Trace](maxRetries: Int = 3,
       json"""{
                "nextDelay": $nextDelay
              }"""
+
+  private implicit val retryDetailsTraceableValue: TraceableValue[RetryDetails] =
+    LowPriorityTraceableValueInstances.fromEncoder[RetryDetails]
 
   private def addRetryDetailsToTrace(ex: Throwable, rd: RetryDetails): F[Unit] =
     Trace[F].attachError(ex, "retryDetails" -> rd)
