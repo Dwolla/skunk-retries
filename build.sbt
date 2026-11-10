@@ -31,7 +31,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
     libraryDependencies ++= Seq(
       "org.tpolecat" %%% "skunk-core" % "0.6.5",
       "org.tpolecat" %%% "natchez-core" % "0.3.10",
-      "org.typelevel" %%% "cats-tagless-core" % "0.16.5",
+      "org.typelevel" %%% "cats-tagless-core" % "0.16.6",
       "com.dwolla" %%% "natchez-tagless" % "0.2.7",
       "io.circe" %%% "circe-literal" % "0.14.16",
       "com.github.cb372" %%% "cats-retry" % (if (scalaVersion.value.startsWith("2") ) "3.1.3" else "4.0.0"),
